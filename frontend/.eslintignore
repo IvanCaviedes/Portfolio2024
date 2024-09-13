@@ -1,0 +1,34 @@
+# Ignorar archivos de configuración y de paquete
+.eslintrc.js
+.prettierrc
+next.config.js
+postcss.config.js
+tsconfig.json
+
+# Ignorar la carpeta de dependencias
+node_modules/
+
+# Ignorar archivos generados
+.next/
+out/
+coverage/
+dist/
+
+# Ignorar archivos de lock y dependencias
+package-lock.json
+yarn.lock
+
+# Ignorar los estilos (si no necesitas lint en CSS o SCSS)
+src/styles/
+
+# Ignorar archivos estáticos, imágenes, etc.
+public/
+
+# Opcional: Ignorar APIs que puedan no necesitar análisis de ESLint
+src/pages/api/
+
+# Ignorar los tipos de archivos que no requieren ESLint
+*.md
+*.svg
+*.png
+*.jpg

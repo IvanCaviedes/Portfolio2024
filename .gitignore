@@ -1,0 +1,16 @@
+# Ignorar directorios node_modules en el frontend y backend
+/frontend/node_modules/
+/backend/node_modules/
+
+# Ignorar node_modules global (si existe en la raíz)
+node_modules/
+
+# Ignorar archivos de entorno (.env)
+.env
+
+# Otros archivos comunes que podrías ignorar
+.DS_Store
+dist/
+coverage/
+.next/
+out/

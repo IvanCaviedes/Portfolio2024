@@ -1,0 +1,39 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "prepare": "husky",
+    
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "install": "npm run install:frontend && npm run install:backend",
+    
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run start:dev",
+    "dev": "npm run dev:frontend & npm run dev:backend",
+
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "build": "npm run build:frontend && npm run build:backend",
+
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm run test",
+    "test": "npm run test:frontend && npm run test:backend",
+
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "lint": "npm run lint:frontend && npm run lint:backend"
+  },
+  "lint-staged": {
+    "frontend/**/*.{js,jsx,ts,tsx}": "cd frontend && npm run lint",
+    "backend/**/*.{js,jsx,ts,tsx}": "cd backend && npm run lint"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^9.1.6"
+  }
+}
