@@ -147,10 +147,6 @@
     "@typescript-eslint/no-empty-function": "error", // Prohíbe funciones vacías
     "@typescript-eslint/no-empty-interface": "error", // Prohíbe interfaces vacías
     "@typescript-eslint/no-explicit-any": "error", // Desalienta el uso de `any`
-    "@typescript-eslint/no-inferrable-types": [
-      "error",
-      { "ignoreParameters": true }
-    ], // Evita definir tipos que pueden inferirse automáticamente
     "@typescript-eslint/no-misused-new": "error", // Evita el mal uso del operador `new` en interfaces o tipos
     "@typescript-eslint/no-namespace": "error", // Desalienta el uso de `namespace`
     "@typescript-eslint/no-non-null-assertion": "error", // Prohíbe el uso del operador `!` de aserción no nula
