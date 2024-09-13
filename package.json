@@ -1,33 +1,46 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": {
+    "name": "Ivan David Caviedes Leon",
+    "email": "ivancaviedes99@gmail.com",
+    "url": "https://github.com/IvanCaviedes"
+  },
+  "license": "MIT",
+  "description": "This is the personal portfolio of Ivan David Caviedes Leon, showcasing projects, skills, and experience as a web developer. Built with Next.js and styled using Tailwind CSS.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IvanCaviedes/Portfolio2024"
+  },
+  "bugs": {
+    "url": "https://github.com/IvanCaviedes/Portfolio2024/issues"
+  },
+  "homepage": "https://github.com/IvanCaviedes/Portfolio2024#readme",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "prepare": "husky",
-    "install:frontend": "cd frontend && npm install",
-    "install:backend": "cd backend && npm install",
-    "install:dependencies": "npm run install:frontend && npm run install:backend",
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && npm run start:dev",
-    "dev": "npm run dev:frontend & npm run dev:backend",
-    "build:frontend": "cd frontend && npm run build",
-    "build:backend": "cd backend && npm run build",
-    "build": "npm run build:frontend && npm run build:backend",
-    "test:frontend": "cd frontend && npm run test",
-    "test:backend": "cd backend && npm run test",
-    "test": "npm run test:frontend && npm run test:backend",
-    "lint:frontend": "cd frontend && npm run lint",
-    "lint:backend": "cd backend && npm run lint",
-    "lint": "npm run lint:frontend && npm run lint:backend"
+    "prepare": "husky install",
+    "install": "npm install --workspaces",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run start:dev --workspace=backend",
+    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "build": "npm run build --workspaces",
+    "test:frontend": "npm run test --workspace=frontend",
+    "test:backend": "npm run test --workspace=backend",
+    "test": "npm run test --workspaces",
+    "lint:frontend": "npm run lint --workspace=frontend",
+    "lint:backend": "npm run lint --workspace=backend",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces"
   },
   "lint-staged": {
     "frontend/**/*.{js,jsx,ts,tsx}": "npm run lint:frontend",
     "backend/**/*.{js,jsx,ts,tsx}": "npm run lint:backend"
   },
-  "dependencies": {},
   "devDependencies": {
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
