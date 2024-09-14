@@ -1,0 +1,33 @@
+# Ignorar archivos y carpetas generadas
+
+dist/
+
+# Ignorar archivos de dependencias
+node_modules/
+
+# Ignorar archivos de configuración
+*.config.js
+*.config.ts
+
+# Ignorar archivos de prueba
+*.test.js
+*.test.ts
+*.test.jsx
+*.test.tsx
+
+# Ignorar archivos de caché
+*.log
+*.cache
+
+
+# Archivos de configuración que no suelen necesitar formateo con Prettier
+.eslintrc.json
+.prettierrc
+tsconfig.json
+
+# Archivos de lock y dependencias
+package.json
+
+# Documentación
+README.md
+

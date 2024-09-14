@@ -13,7 +13,7 @@ interface ITest {
   providers: [AppService],
 })
 export class AppModule {
-  test: ITest = {
+  public test: ITest = {
     hola: 'hola',
   };
 }

@@ -1,0 +1,25 @@
+# Ignorar archivos de configuración y de paquete
+.eslintrc.js
+.prettierrc
+tsconfig.json
+
+# Ignorar la carpeta de dependencias
+node_modules/
+
+# Ignorar archivos generados
+out/
+coverage/
+dist/
+
+# Ignorar archivos de lock y dependencias
+package-lock.json
+yarn.lock
+
+# Ignorar archivos estáticos, imágenes, etc.
+public/
+
+# Ignorar los tipos de archivos que no requieren ESLint
+*.md
+*.svg
+*.png
+*.jpg
