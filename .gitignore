@@ -4,6 +4,7 @@
 
 # Ignorar node_modules global (si existe en la raíz)
 node_modules/
+.vscode/*
 
 # Ignorar archivos de entorno (.env)
 .env
