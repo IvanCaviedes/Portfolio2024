@@ -13,6 +13,7 @@
     "test:dev": "NODE_OPTIONS='--no-deprecation' jest --watch"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "next": "14.2.10",
     "react": "^18",
     "react-dom": "^18"

@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
 import type { AppProps } from 'next/app';
+
 import '@/styles/globals.css';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention

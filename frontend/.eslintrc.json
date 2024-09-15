@@ -15,7 +15,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended",
     "plugin:jest/recommended"
   ],
   "plugins": [
