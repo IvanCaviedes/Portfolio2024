@@ -16,6 +16,7 @@
     "url": "https://github.com/IvanCaviedes/Portfolio2024/issues"
   },
   "homepage": "https://github.com/IvanCaviedes/Portfolio2024#readme",
+  "private": true,
   "workspaces": [
     "frontend",
     "backend"
