@@ -1,10 +1,18 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { JSX } from 'react';
 
-import type { AppProps } from 'next/app';
-
 import '@/styles/globals.css';
+import BlankLayout from '@/components/layouts/blank';
+import { IAppPropsWithLayout } from '@/types';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
-  return <Component {...pageProps} />;
+export default function App({
+  Component,
+  pageProps,
+}: IAppPropsWithLayout): JSX.Element {
+  const Layout = Component.Layout ?? BlankLayout;
+  return (
+    <Layout {...pageProps}>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
