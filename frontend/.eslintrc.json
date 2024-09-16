@@ -48,7 +48,6 @@
     "react/jsx-indent-props": ["error", 2], // Forzar indentación de 2 espacios en props JSX
     "react/jsx-key": "error", // Obliga a usar `key` en iteraciones JSX
     "react/jsx-no-duplicate-props": "error", // Evitar props duplicados en un mismo elemento JSX
-    "react/jsx-no-useless-fragment": "error", // Evita usar fragmentos innecesarios
     "react/jsx-pascal-case": "error", // Obliga a usar PascalCase para componentes JSX
     "react/jsx-props-no-multi-spaces": "error", // Evita múltiples espacios entre props
     "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }], // Espacio antes de cierre automático en JSX
@@ -359,12 +358,6 @@
     // Otras reglas útiles de importación
     "import/no-duplicates": "error", // Evita duplicados en las importaciones
     "import/prefer-default-export": "off", // Opcional: Desactiva la preferencia por exportaciones predeterminadas si usas exportaciones nombradas
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true // Permite importar dependencias de desarrollo
-      }
-    ],
     "import/extensions": [
       "error",
       "never",
