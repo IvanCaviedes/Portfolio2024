@@ -11,3 +11,10 @@ export type INextPageWithLayout = NextPage & {
 export type IAppPropsWithLayout = AppProps & {
   Component: INextPageWithLayout;
 };
+
+export type ISettings = Record<string, unknown>;
+
+export interface ISettingsProviderProps {
+  initialValues?: ISettings;
+  [key: string]: unknown;
+}
