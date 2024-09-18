@@ -25,6 +25,7 @@
     "import",
     "jest"
   ],
+  "ignorePatterns": ["next-sitemap.config.js"],
   "rules": {
     "react/jsx-sort-props": [
       "error",
