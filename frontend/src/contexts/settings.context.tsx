@@ -2,7 +2,17 @@ import { FC, createContext, useContext, useState } from 'react';
 
 import { ISettings, ISettingsProviderProps } from '@/types';
 
-const initialState: ISettings = {};
+const initialState: ISettings = {
+  site: {
+    title: 'Portfolio',
+    defaultTile: 'Porfolio',
+    subtitle: 'Portolio',
+    logo: {
+      thumbnail: '',
+      original: '',
+    },
+  },
+};
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const SettingsContext = createContext<ISettings>(initialState);
@@ -16,7 +26,7 @@ export const SettingsProvider: FC<ISettingsProviderProps> = ({
   return <SettingsContext.Provider value={state} {...props} />;
 };
 
-export const UseSettings = (): ISettings => {
+export const UseSettingsContext = (): ISettings => {
   const context = useContext(SettingsContext);
   if (typeof context === 'undefined') {
     throw new Error('usesettings must be used with a settingsProvider');
