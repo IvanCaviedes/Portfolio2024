@@ -12,7 +12,29 @@ export type IAppPropsWithLayout = AppProps & {
   Component: INextPageWithLayout;
 };
 
-export type ISettings = Record<string, unknown>;
+// export type ISettings = Record<string, unknown>;
+
+interface IOgImage {
+  id: number;
+  thumbnail: string;
+  original: string;
+}
+
+interface ISeo {
+  metaTitle: string;
+  metaDescription: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: IOgImage;
+  twitterHandle: string;
+  twitterCardType: string;
+  metaTags: string;
+  canonicalUrl: string;
+}
+
+export interface ISettings {
+  seo: ISeo;
+}
 
 export interface ISettingsProviderProps {
   initialValues?: ISettings;
