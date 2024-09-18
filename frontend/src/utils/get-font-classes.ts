@@ -14,7 +14,9 @@ const allanFont = Allan({
   variable: '--font-alan',
 });
 
-export const fontClass = classNames(
+const fontClass = classNames(
   cedarvilleCursiveFont.variable,
   allanFont.variable
 );
+
+export default fontClass;

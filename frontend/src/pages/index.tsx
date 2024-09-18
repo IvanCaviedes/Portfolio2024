@@ -1,8 +1,7 @@
 import { JSX } from 'react';
 
 import { INextPageWithLayout } from '@/types';
-
-import { fontClass } from './fonts';
+import fontClass from '@/utils/get-font-classes';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const Home: INextPageWithLayout = (): JSX.Element => {
