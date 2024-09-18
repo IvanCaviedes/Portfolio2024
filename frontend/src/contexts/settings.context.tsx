@@ -3,20 +3,14 @@ import { FC, createContext, useContext, useState } from 'react';
 import { ISettings, ISettingsProviderProps } from '@/types';
 
 const initialState: ISettings = {
-  seo: {
-    metaTitle: '',
-    metaDescription: '',
-    ogTitle: '',
-    ogDescription: '',
-    ogImage: {
-      id: 1,
+  site: {
+    title: 'Portfolio',
+    defaultTile: 'Porfolio',
+    subtitle: 'Portolio',
+    logo: {
       thumbnail: '',
       original: '',
     },
-    twitterHandle: '',
-    twitterCardType: '',
-    metaTags: '',
-    canonicalUrl: '',
   },
 };
 
