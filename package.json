@@ -43,6 +43,7 @@
     "backend/**/*.{js,jsx,ts,tsx}": "npm run lint:backend"
   },
   "devDependencies": {
+    "concurrently": "^9.0.1",
     "husky": "9.1.6",
     "lint-staged": "15.2.10"
   }
