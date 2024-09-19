@@ -4,8 +4,8 @@ import { ISettings, ISettingsProviderProps } from '@/types';
 
 const initialState: ISettings = {
   site: {
-    title: 'Portfolio',
-    defaultTile: 'Porfolio',
+    title: 'Test',
+    defaultTitle: 'Porfolio',
     subtitle: 'Portolio',
     logo: {
       thumbnail: '',

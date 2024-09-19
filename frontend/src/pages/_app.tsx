@@ -2,9 +2,9 @@
 import { JSX } from 'react';
 
 import '@/styles/globals.css';
-import AppSettings from '@/components/common/app-settings';
-import DefaultSeo from '@/components/common/default-seo';
 import BlankLayout from '@/components/layouts/blank';
+import DefaultSeo from '@/components/ui/default-seo';
+import AppSettingsProvider from '@/providers/app-settings-provider';
 import { IAppPropsWithLayout } from '@/types';
 
 export default function App({
@@ -13,11 +13,11 @@ export default function App({
 }: IAppPropsWithLayout): JSX.Element {
   const Layout = Component.Layout ?? BlankLayout;
   return (
-    <AppSettings>
+    <AppSettingsProvider>
       <DefaultSeo />
       <Layout {...pageProps}>
         <Component {...pageProps} />
       </Layout>
-    </AppSettings>
+    </AppSettingsProvider>
   );
 }
