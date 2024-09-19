@@ -27,11 +27,17 @@ interface ISeo {
   twitterCardType: string;
   metaTags: string;
   canonicalUrl: string;
+  keywords: string[];
+  author: string;
+  ogImageAlt: string;
+  faviconUrl: string;
+  appleIconUrl: string;
+  manifestUrl: string;
 }
 
 export interface ISite {
   title: string;
-  defaultTile: string;
+  defaultTitle: string;
   subtitle: string;
   logo: IImage;
 }
@@ -44,4 +50,17 @@ export interface ISettings {
 export interface ISettingsProviderProps {
   initialValues?: ISettings;
   [key: string]: unknown;
+}
+
+export interface ISeoProps {
+  title: string;
+  description: string;
+  url: string;
+}
+
+export type IEnvTypes = 'development' | 'production' | 'test';
+
+export interface IEnvironmentVariables {
+  NODE_ENV: IEnvTypes;
+  NEXT_PUBLIC_WEBSITE_URL: string;
 }
