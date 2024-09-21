@@ -42,9 +42,17 @@ export interface ISite {
   logo: IImage;
 }
 
+export interface IMaintenance {
+  isUnderMaintenance: boolean;
+  start?: string;
+  until?: string;
+  image?: IImage;
+}
+
 export interface ISettings {
   seo?: ISeo;
   site: ISite;
+  maintenance: IMaintenance;
 }
 
 export interface ISettingsProviderProps {

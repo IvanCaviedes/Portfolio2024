@@ -12,6 +12,11 @@ const initialState: ISettings = {
       original: '',
     },
   },
+  maintenance: {
+    isUnderMaintenance: true,
+    start: new Date('2024-09-20').toISOString(),
+    until: new Date('2024-09-25').toISOString(),
+  },
 };
 
 // eslint-disable-next-line @typescript-eslint/naming-convention

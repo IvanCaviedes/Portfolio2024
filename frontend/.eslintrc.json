@@ -92,7 +92,7 @@
 
     // Reglas de React Hooks
     "react-hooks/rules-of-hooks": "error", // Aplicar las reglas de los Hooks
-    "react-hooks/exhaustive-deps": "warn", // Verificar dependencias en efectos de Hooks
+    "react-hooks/exhaustive-deps": "off", // Verificar dependencias en efectos de Hooks
     "react/jsx-no-bind": [
       "error",
       {
@@ -151,7 +151,7 @@
     "@typescript-eslint/no-this-alias": "error", // Prohíbe reasignar `this` a otra variable
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { "argsIgnorePattern": "^_" }
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
     ], // Evita variables no usadas, permitiendo ignorar argumentos que empiezan con `_`
     "@typescript-eslint/no-use-before-define": [
       "error",
@@ -169,7 +169,8 @@
       "error",
       {
         "selector": "variableLike",
-        "format": ["camelCase"]
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
       },
       {
         "selector": "function",
@@ -195,6 +196,12 @@
         "selector": "typeAlias",
         "format": ["PascalCase"],
         "prefix": ["I"] // Prefijo para alias de tipos
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["unused"],
+        "format": null,
+        "leadingUnderscore": "require"
       }
     ], // Aplica convenciones de nombres como camelCase para variables
 
@@ -210,7 +217,6 @@
     "@typescript-eslint/prefer-readonly": "error", // Prefiere que las propiedades sean `readonly` cuando sea posible
     "@typescript-eslint/require-array-sort-compare": "error", // Obliga a definir un comparador en `Array.sort()`
     "@typescript-eslint/restrict-plus-operands": "error", // Restringe el uso del operador `+` a tipos permitidos
-    "@typescript-eslint/strict-boolean-expressions": "warn", // Desalienta el uso de expresiones booleanas ambiguas
 
     // Reglas de módulos y gestión de imports
     "@typescript-eslint/no-var-requires": "error", // Prohíbe el uso de `require()`
@@ -246,7 +252,9 @@
       {
         "vars": "all",
         "args": "none", // No reporta argumentos no utilizados en funciones
-        "ignoreRestSiblings": true // No reporta variables no utilizadas en expresiones de desestructuración
+        "ignoreRestSiblings": true, // No reporta variables no utilizadas en expresiones de desestructuración
+        "varsIgnorePattern": "^_", // Ignora variables que empiezan con _
+        "argsIgnorePattern": "^_"
       }
     ],
 
