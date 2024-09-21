@@ -15,7 +15,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   "plugins": [
     "react",
@@ -23,7 +24,8 @@
     "@typescript-eslint",
     "prettier",
     "import",
-    "jest"
+    "jest",
+    "@tanstack/query"
   ],
   "ignorePatterns": ["next-sitemap.config.js"],
   "rules": {

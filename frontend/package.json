@@ -14,6 +14,7 @@
     "test:dev": "NODE_OPTIONS='--no-deprecation' jest --watch"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "jotai": "^2.9.3",
@@ -24,6 +25,7 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.57.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",

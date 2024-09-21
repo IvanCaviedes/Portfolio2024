@@ -11,6 +11,7 @@ const DinamicSeo: FC<ISeoProps> = ({
   url,
 }): JSX.Element => {
   const websiteUrl = Environments.NEXT_PUBLIC_WEBSITE_URL;
+
   const pageUrl = `${websiteUrl}/${url}`;
   return (
     <NextSeo
