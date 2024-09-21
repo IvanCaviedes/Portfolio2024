@@ -3,6 +3,7 @@ import { JSX } from 'react';
 
 import '@/styles/globals.css';
 import BlankLayout from '@/components/layouts/blank';
+import Maintenance from '@/components/maintenance';
 import DefaultSeo from '@/components/ui/default-seo';
 import AppSettingsProvider from '@/providers/app-settings-provider';
 import { IAppPropsWithLayout } from '@/types';
@@ -15,9 +16,11 @@ export default function App({
   return (
     <AppSettingsProvider>
       <DefaultSeo />
-      <Layout {...pageProps}>
-        <Component {...pageProps} />
-      </Layout>
+      <Maintenance>
+        <Layout {...pageProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </Maintenance>
     </AppSettingsProvider>
   );
 }
