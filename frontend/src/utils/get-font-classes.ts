@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-// eslint-disable-next-line camelcase
 import { Cedarville_Cursive, Allan } from 'next/font/google';
 
 const cedarvilleCursiveFont = Cedarville_Cursive({

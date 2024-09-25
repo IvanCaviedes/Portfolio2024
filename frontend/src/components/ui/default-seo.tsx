@@ -2,10 +2,10 @@ import { JSX, useState } from 'react';
 
 import { DefaultSeoProps, DefaultSeo as NextDefaultSeo } from 'next-seo';
 
-import { UseSettingsContext } from '@/contexts/settings.context';
+import { useSettingsStore } from '@/store/settings';
 
 const DefaultSeo = ({ ...props }: DefaultSeoProps): JSX.Element => {
-  const { seo, site } = UseSettingsContext();
+  const { site, seo } = useSettingsStore((e) => e.settings);
   const [title] = useState(seo?.metaTitle ?? site.title);
   const [description] = useState(seo?.ogDescription ?? site.subtitle);
 

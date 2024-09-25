@@ -22,7 +22,8 @@
     "next-seo": "^6.6.0",
     "react": "^18",
     "react-dom": "^18",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.57.1",
