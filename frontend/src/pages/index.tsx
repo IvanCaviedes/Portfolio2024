@@ -3,8 +3,7 @@ import { JSX } from 'react';
 import { INextPageWithLayout } from '@/types';
 import fontClass from '@/utils/get-font-classes';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const Home: INextPageWithLayout = (): JSX.Element => {
+const Index: INextPageWithLayout = (): JSX.Element => {
   return (
     <div className={fontClass}>
       <div className="font-alan">Hola</div>
@@ -14,4 +13,4 @@ const Home: INextPageWithLayout = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default Index;

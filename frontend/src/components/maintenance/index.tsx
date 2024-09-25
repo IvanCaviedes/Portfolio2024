@@ -1,9 +1,17 @@
-import { FC, ReactNode, JSX, useMemo, useCallback, useEffect } from 'react';
+import {
+  FC,
+  ReactNode,
+  JSX,
+  useMemo,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 
 import { eachDayOfInterval, isTomorrow } from 'date-fns';
 import { useAtom } from 'jotai';
 
-import { UseSettingsContext } from '@/contexts/settings.context';
+import { useSettingsStore } from '@/store/settings';
 import {
   checkIsMantenanceModeComing,
   checkIsMantenanceModeStart,
@@ -15,7 +23,8 @@ const Maintenance: FC<{ children: ReactNode }> = ({
 }): JSX.Element => {
   const {
     maintenance: { start, isUnderMaintenance, until },
-  } = UseSettingsContext();
+  } = useSettingsStore((e) => e.settings);
+  const [isLoading, setIsLoading] = useState(true); // Estado de carga
 
   const [_, setUnderMantenanceIsComing] = useAtom(checkIsMantenanceModeComing);
 
@@ -42,11 +51,16 @@ const Maintenance: FC<{ children: ReactNode }> = ({
       const beforeDay = isTomorrow(new Date(start as string));
       setUnderMantenanceIsComing(beforeDay && isUnderMaintenance);
     }
+    setIsLoading(false);
   }, [dateInterval, isUnderMaintenance, start]);
 
   useEffect(() => {
     handleMaintenanceCheck();
   }, [handleMaintenanceCheck]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   if (underMantenanceStart) {
     return <>Maintenance</>;

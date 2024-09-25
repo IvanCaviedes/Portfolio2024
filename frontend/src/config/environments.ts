@@ -12,7 +12,6 @@ const getVarEnv = <K extends keyof IEnvironmentVariables>(
   return value as IEnvironmentVariables[K];
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const Environments: IEnvironmentVariables = {
   NODE_ENV: getVarEnv('NODE_ENV', 'development'),
   NEXT_PUBLIC_WEBSITE_URL: getVarEnv('NEXT_PUBLIC_WEBSITE_URL'),

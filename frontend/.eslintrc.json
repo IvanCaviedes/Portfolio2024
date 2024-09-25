@@ -170,22 +170,6 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector": "variableLike",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow"
-      },
-      {
-        "selector": "function",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow"
-      },
-      {
-        "selector": "variable",
-        "types": ["function"],
-        "format": ["PascalCase"],
-        "modifiers": ["exported"]
-      },
-      {
         "selector": "class",
         "format": ["PascalCase"]
       },
@@ -295,7 +279,7 @@
       {
         "properties": "always", // Requiere el uso de camelCase para las propiedades de los objetos
         "ignoreDestructuring": false, // No permite excepciones para las destructuraciones
-        "ignoreImports": false, // No permite excepciones para los nombres de importaciones
+        "ignoreImports": true, // No permite excepciones para los nombres de importaciones
         "ignoreGlobals": false // No permite excepciones para las variables globales
       }
     ],
