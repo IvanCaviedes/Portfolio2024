@@ -3,6 +3,8 @@ import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 
+import { ITailwindColor } from '@/components/ui/loader/loaders';
+
 export type INextPageWithLayout = NextPage & {
   Layout?: (page: ReactElement) => ReactNode;
   requiresAuth?: boolean;
@@ -71,4 +73,51 @@ export type IEnvTypes = 'development' | 'production' | 'test';
 export interface IEnvironmentVariables {
   NODE_ENV: IEnvTypes;
   NEXT_PUBLIC_WEBSITE_URL: string;
+}
+
+export type ILoaderType =
+  | 'ThreeDots'
+  | 'Circles'
+  | 'Puff'
+  | 'Rings'
+  | 'Audio'
+  | 'BallTriangle'
+  | 'Bars'
+  | 'CirclesWithBar'
+  | 'ColorRing'
+  | 'Comment'
+  | 'DNA'
+  | 'Discuss'
+  | 'FallingLines'
+  | 'FidgetSpinner'
+  | 'Grid'
+  | 'Hearts'
+  | 'Hourglass'
+  | 'InfinitySpin'
+  | 'LineWave'
+  | 'MagnifyingGlass'
+  | 'MutatingDots'
+  | 'Oval'
+  | 'ProgressBar'
+  | 'Radio'
+  | 'RevolvingDot'
+  | 'RotatingLines'
+  | 'RotatingSquare'
+  | 'RotatingTriangles'
+  | 'TailSpin'
+  | 'ThreeCircles'
+  | 'Triangle'
+  | 'Vortex'
+  | 'Watch';
+
+type IStyle = Record<string, string>;
+export interface ILoaderProps {
+  type?: ILoaderType;
+  height?: string;
+  width?: string;
+  ariaLabel?: string;
+  wrapperStyle?: IStyle;
+  wrapperClass?: string;
+  visible?: boolean;
+  color?: ITailwindColor;
 }

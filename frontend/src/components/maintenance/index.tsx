@@ -11,6 +11,7 @@ import {
 import { eachDayOfInterval, isTomorrow } from 'date-fns';
 import { useAtom } from 'jotai';
 
+import Loader from '@/components/ui/loader';
 import { useSettingsStore } from '@/store/settings';
 import {
   checkIsMantenanceModeComing,
@@ -59,7 +60,7 @@ const Maintenance: FC<{ children: ReactNode }> = ({
   }, [handleMaintenanceCheck]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader color="blue-500" type="ThreeDots" />;
   }
 
   if (underMantenanceStart) {
