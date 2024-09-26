@@ -17,7 +17,7 @@ const initialState: ISettings = {
   maintenance: {
     isUnderMaintenance: true,
     start: new Date('2024-09-20').toISOString(),
-    until: new Date('2024-09-25').toISOString(),
+    until: new Date('2024-09-27').toISOString(),
   },
 };
 
