@@ -60,7 +60,7 @@ const Maintenance: FC<{ children: ReactNode }> = ({
   }, [handleMaintenanceCheck]);
 
   if (isLoading) {
-    return <Loader color="blue-500" type="ThreeDots" />;
+    return <Loader color="red-400" type="ThreeDots" />;
   }
 
   if (underMantenanceStart) {
