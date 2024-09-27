@@ -11,6 +11,7 @@ import {
 import { eachDayOfInterval, isTomorrow } from 'date-fns';
 import { useAtom } from 'jotai';
 
+import MaintenanceMode from '@/components/maintenance/Mantenance';
 import Loader from '@/components/ui/loader';
 import { useSettingsStore } from '@/store/settings';
 import {
@@ -25,7 +26,7 @@ const Maintenance: FC<{ children: ReactNode }> = ({
   const {
     maintenance: { start, isUnderMaintenance, until },
   } = useSettingsStore((e) => e.settings);
-  const [isLoading, setIsLoading] = useState(true); // Estado de carga
+  const [isLoading, setIsLoading] = useState(true);
 
   const [_, setUnderMantenanceIsComing] = useAtom(checkIsMantenanceModeComing);
 
@@ -64,7 +65,7 @@ const Maintenance: FC<{ children: ReactNode }> = ({
   }
 
   if (underMantenanceStart) {
-    return <>Maintenance</>;
+    return <MaintenanceMode />;
   }
 
   return <>{children}</>;

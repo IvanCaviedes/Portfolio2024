@@ -98,3 +98,8 @@ export interface IUseLoadSettings {
   error: IError | null;
   data: unknown;
 }
+
+export interface ICountTimerProps {
+  date: Date;
+  title?: string;
+}
