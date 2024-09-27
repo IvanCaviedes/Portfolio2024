@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.timer {
+    @apply text-center text-xl font-bold leading-none tracking-wide lg:min-w-[120px] lg:text-[5.3125rem]
+}
+
+.title {
+    @apply mt-4 block text-center text-base font-medium lowercase
+}
+
+.separator {
+    @apply relative top-2 text-6xl font-bold leading-none
+}
+.separatorParent {
+    @apply hidden self-start lg:block
+}

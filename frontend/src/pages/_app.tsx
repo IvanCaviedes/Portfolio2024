@@ -9,7 +9,7 @@ import {
 import BlankLayout from '@/components/layouts/blank';
 import Maintenance from '@/components/maintenance';
 import DefaultSeo from '@/components/ui/default-seo';
-import SettingProvider from '@/providers/settingsProvider';
+import SettingProvider from '@/providers/settings-provider';
 import { IAppPropsWithLayout } from '@/types';
 
 const queryClient = new QueryClient({
