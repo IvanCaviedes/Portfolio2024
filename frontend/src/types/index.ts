@@ -103,3 +103,16 @@ export interface ICountTimerProps {
   date: Date;
   title?: string;
 }
+
+export interface ICountDownDisplayProps {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  completed: boolean;
+}
+
+export interface ITimeUnitProps {
+  value: number;
+  label: string;
+}

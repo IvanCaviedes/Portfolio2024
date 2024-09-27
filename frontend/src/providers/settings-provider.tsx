@@ -2,7 +2,7 @@ import { JSX, FC, ReactNode } from 'react';
 
 import ErrorMessage from '@/components/ui/error-message';
 import Loader from '@/components/ui/loader';
-import { useLoadSettings } from '@/hooks/useLoadSettings';
+import { useLoadSettings } from '@/hooks/use-load-settings';
 
 const SettingProvider: FC<{ children: ReactNode }> = ({
   children,
