@@ -3,7 +3,7 @@ import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 
-import { ITailwindColor } from '@/components/ui/loader/loaders';
+import { ITailwindColor, loaderTypeMap } from '@/components/ui/loader/loaders';
 
 export type INextPageWithLayout = NextPage & {
   Layout?: (page: ReactElement) => ReactNode;
@@ -75,40 +75,7 @@ export interface IEnvironmentVariables {
   NEXT_PUBLIC_WEBSITE_URL: string;
 }
 
-export type ILoaderType =
-  | 'ThreeDots'
-  | 'Circles'
-  | 'Puff'
-  | 'Rings'
-  | 'Audio'
-  | 'BallTriangle'
-  | 'Bars'
-  | 'CirclesWithBar'
-  | 'ColorRing'
-  | 'Comment'
-  | 'DNA'
-  | 'Discuss'
-  | 'FallingLines'
-  | 'FidgetSpinner'
-  | 'Grid'
-  | 'Hearts'
-  | 'Hourglass'
-  | 'InfinitySpin'
-  | 'LineWave'
-  | 'MagnifyingGlass'
-  | 'MutatingDots'
-  | 'Oval'
-  | 'ProgressBar'
-  | 'Radio'
-  | 'RevolvingDot'
-  | 'RotatingLines'
-  | 'RotatingSquare'
-  | 'RotatingTriangles'
-  | 'TailSpin'
-  | 'ThreeCircles'
-  | 'Triangle'
-  | 'Vortex'
-  | 'Watch';
+export type ILoaderType = keyof typeof loaderTypeMap;
 
 type IStyle = Record<string, string>;
 export interface ILoaderProps {
@@ -120,4 +87,14 @@ export interface ILoaderProps {
   wrapperClass?: string;
   visible?: boolean;
   color?: ITailwindColor;
+}
+
+export interface IError {
+  message: string;
+}
+
+export interface IUseLoadSettings {
+  isLoading: boolean;
+  error: IError | null;
+  data: unknown;
 }
