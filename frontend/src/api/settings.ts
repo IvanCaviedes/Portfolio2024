@@ -7,7 +7,7 @@ const fetchUsers = async () => {
 
 export const useSettingsApi = (): UseQueryResult => {
   return useQuery({
-    queryKey: ['test'],
+    queryKey: ['testa'],
     queryFn: fetchUsers,
   });
 };
