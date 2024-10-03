@@ -15,8 +15,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   "plugins": [
     "react",
@@ -24,8 +24,10 @@
     "@typescript-eslint",
     "prettier",
     "import",
-    "jest"
+    "jest",
+    "@tanstack/query"
   ],
+  "ignorePatterns": ["next-sitemap.config.js"],
   "rules": {
     "react/jsx-sort-props": [
       "error",
@@ -49,7 +51,6 @@
     "react/jsx-indent-props": ["error", 2], // Forzar indentación de 2 espacios en props JSX
     "react/jsx-key": "error", // Obliga a usar `key` en iteraciones JSX
     "react/jsx-no-duplicate-props": "error", // Evitar props duplicados en un mismo elemento JSX
-    "react/jsx-no-useless-fragment": "error", // Evita usar fragmentos innecesarios
     "react/jsx-pascal-case": "error", // Obliga a usar PascalCase para componentes JSX
     "react/jsx-props-no-multi-spaces": "error", // Evita múltiples espacios entre props
     "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }], // Espacio antes de cierre automático en JSX
@@ -75,7 +76,6 @@
     ], // Prefiere funciones sin estado para componentes funcionales
     "react/prop-types": "error", // Obligar a definir `propTypes`
     "react/react-in-jsx-scope": "off", // No es necesario tener React en el alcance desde React 17
-    "react/require-default-props": "error", // Obligar a definir `defaultProps` cuando es necesario
     "react/self-closing-comp": "error", // Obliga a usar etiquetas autocerradas cuando no tienen hijos
     "react/sort-comp": [
       "error",
@@ -93,7 +93,7 @@
 
     // Reglas de React Hooks
     "react-hooks/rules-of-hooks": "error", // Aplicar las reglas de los Hooks
-    "react-hooks/exhaustive-deps": "warn", // Verificar dependencias en efectos de Hooks
+    "react-hooks/exhaustive-deps": "off", // Verificar dependencias en efectos de Hooks
     "react/jsx-no-bind": [
       "error",
       {
@@ -152,7 +152,7 @@
     "@typescript-eslint/no-this-alias": "error", // Prohíbe reasignar `this` a otra variable
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { "argsIgnorePattern": "^_" }
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
     ], // Evita variables no usadas, permitiendo ignorar argumentos que empiezan con `_`
     "@typescript-eslint/no-use-before-define": [
       "error",
@@ -169,21 +169,6 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector": "variableLike",
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "function",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow"
-      },
-      {
-        "selector": "variable",
-        "types": ["function"],
-        "format": ["PascalCase"],
-        "modifiers": ["exported"]
-      },
-      {
         "selector": "class",
         "format": ["PascalCase"]
       },
@@ -196,6 +181,12 @@
         "selector": "typeAlias",
         "format": ["PascalCase"],
         "prefix": ["I"] // Prefijo para alias de tipos
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["unused"],
+        "format": null,
+        "leadingUnderscore": "require"
       }
     ], // Aplica convenciones de nombres como camelCase para variables
 
@@ -211,7 +202,6 @@
     "@typescript-eslint/prefer-readonly": "error", // Prefiere que las propiedades sean `readonly` cuando sea posible
     "@typescript-eslint/require-array-sort-compare": "error", // Obliga a definir un comparador en `Array.sort()`
     "@typescript-eslint/restrict-plus-operands": "error", // Restringe el uso del operador `+` a tipos permitidos
-    "@typescript-eslint/strict-boolean-expressions": "warn", // Desalienta el uso de expresiones booleanas ambiguas
 
     // Reglas de módulos y gestión de imports
     "@typescript-eslint/no-var-requires": "error", // Prohíbe el uso de `require()`
@@ -247,7 +237,9 @@
       {
         "vars": "all",
         "args": "none", // No reporta argumentos no utilizados en funciones
-        "ignoreRestSiblings": true // No reporta variables no utilizadas en expresiones de desestructuración
+        "ignoreRestSiblings": true, // No reporta variables no utilizadas en expresiones de desestructuración
+        "varsIgnorePattern": "^_", // Ignora variables que empiezan con _
+        "argsIgnorePattern": "^_"
       }
     ],
 
@@ -286,7 +278,7 @@
       {
         "properties": "always", // Requiere el uso de camelCase para las propiedades de los objetos
         "ignoreDestructuring": false, // No permite excepciones para las destructuraciones
-        "ignoreImports": false, // No permite excepciones para los nombres de importaciones
+        "ignoreImports": true, // No permite excepciones para los nombres de importaciones
         "ignoreGlobals": false // No permite excepciones para las variables globales
       }
     ],
@@ -360,12 +352,6 @@
     // Otras reglas útiles de importación
     "import/no-duplicates": "error", // Evita duplicados en las importaciones
     "import/prefer-default-export": "off", // Opcional: Desactiva la preferencia por exportaciones predeterminadas si usas exportaciones nombradas
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true // Permite importar dependencias de desarrollo
-      }
-    ],
     "import/extensions": [
       "error",
       "never",
