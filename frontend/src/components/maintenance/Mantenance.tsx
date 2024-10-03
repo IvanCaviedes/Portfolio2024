@@ -11,7 +11,7 @@ const TitleMaintenance: FC<{ title?: string }> = ({ title }): JSX.Element => {
   if (!title) {
     return <></>;
   }
-  return <h2 className="mt-12 text-5xl font-medium">{title}</h2>;
+  return <h2 className="mt-8 text-3xl font-medium md:text-5xl">{title}</h2>; // Ajuste de tamaño para móvil
 };
 
 const DescriptionMaintenance: FC<{ description?: string }> = ({
@@ -20,7 +20,15 @@ const DescriptionMaintenance: FC<{ description?: string }> = ({
   if (!description) {
     return <></>;
   }
-  return <p className="text-base font-light">{description}</p>;
+  return <p className="text-sm font-light md:text-base">{description}</p>; // Ajuste de tamaño para móvil
+};
+
+const LogoMaintenance: FC = (): JSX.Element => {
+  return (
+    <h1 className="bg-gradient-to-r from-gray-800 via-green-800 to-lime-600 bg-clip-text font-lobster text-4xl font-bold uppercase text-transparent drop-shadow-lg md:text-6xl">
+      Ivan Caviedes
+    </h1>
+  );
 };
 
 const ImageMaintenace: FC<{ image?: IImage }> = ({ image }): JSX.Element => {
@@ -53,14 +61,6 @@ const OverlayColorMaintenance: FC<{ overlayColor: IOverlay }> = ({
   );
 };
 
-const LogoMaintenance: FC = (): JSX.Element => {
-  return (
-    <h1 className="bg-gradient-to-r from-gray-800 via-green-800 to-lime-600 bg-clip-text font-lobster text-6xl font-bold uppercase text-transparent drop-shadow-lg">
-      Ivan Caviedes
-    </h1>
-  );
-};
-
 const MaintenanceMode: FC = (): JSX.Element => {
   const {
     maintenance: { start, until, title, description, image, overlay },
@@ -69,20 +69,20 @@ const MaintenanceMode: FC = (): JSX.Element => {
   const maintenanceDate = useMemo(() => {
     return new Date(start ? (until as string) : (start as string));
   }, [start, until]);
-  // fontClass;
+
   return (
     <main
-      className={`relative flex h-screen w-full flex-col items-center justify-center text-center ${fontClass} px-4 md:px-0`}
+      className={`relative flex min-h-screen w-full flex-col items-center justify-center text-center ${fontClass} px-4 md:px-0`}
     >
-      <header className="z-20 mb-10">
+      <header className="z-20 mb-6 md:mb-10">
         <LogoMaintenance />
       </header>
 
-      <section className="relative z-30 mx-auto flex max-w-4xl flex-col gap-8 rounded-3xl bg-white p-5 shadow-2xl">
+      <section className="relative z-30 mx-auto flex w-full max-w-3xl flex-col gap-4 rounded-3xl bg-white p-5 shadow-2xl md:gap-8">
         <TitleMaintenance title={title} />
         <DescriptionMaintenance description={description} />
 
-        <div className="my-8 lg:mt-12">
+        <div className="my-6 lg:mt-10">
           <CountDownTimer date={maintenanceDate} />
         </div>
       </section>
