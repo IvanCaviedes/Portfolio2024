@@ -22,7 +22,7 @@ const CountDownDisplay: FC<ICountDownDisplayProps> = ({
     return <Completed />;
   }
   return (
-    <ul className="mx-auto flex max-w-md justify-center gap-6">
+    <ul className="mx-auto flex max-w-md justify-center gap-2 md:gap-6">
       <TimeUnit label="dias" value={days} />
       <TimeUnit label="horas" value={hours} />
       <TimeUnit label="minutos" value={minutes} />
