@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         cedarville:['var(--font-cedarville)'],
-        alan :['var(--font-alan)']
+        alan :['var(--font-alan)'],
+        lobster:['var(--font-lobster)']
       },
       keyframes: {
         shake: {

@@ -2,18 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .timer {
-    @apply text-center text-xl font-bold leading-none tracking-wide lg:min-w-[120px] lg:text-[5.3125rem]
-}
-
-.title {
-    @apply mt-4 block text-center text-base font-medium lowercase
-}
-
-.separator {
-    @apply relative top-2 text-6xl font-bold leading-none
-}
-.separatorParent {
-    @apply hidden self-start lg:block
+    @apply flex flex-col gap-2 justify-center items-center;
+    .unit{
+        @apply text-4xl w-20 h-20 flex justify-center items-center rounded-md shadow-md
+    }
+    .title{
+        @apply text-lg uppercase font-light
+    }
 }

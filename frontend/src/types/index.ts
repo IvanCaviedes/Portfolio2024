@@ -14,7 +14,7 @@ export type IAppPropsWithLayout = AppProps & {
   Component: INextPageWithLayout;
 };
 
-interface IImage {
+export interface IImage {
   thumbnail: string;
   original: string;
 }
@@ -44,11 +44,20 @@ export interface ISite {
   logo: IImage;
 }
 
+export interface IOverlay {
+  isOverlayColor: boolean;
+  overlayColor?: string;
+  overlayColorRange?: string;
+}
+
 export interface IMaintenance {
   isUnderMaintenance: boolean;
+  title?: string;
   start?: string;
   until?: string;
   image?: IImage;
+  description?: string;
+  overlay: IOverlay;
 }
 
 export interface ISettings {
@@ -64,8 +73,8 @@ export interface ISettingsProviderProps {
 
 export interface ISeoProps {
   title: string;
-  description: string;
-  url: string;
+  description?: string;
+  url?: string;
 }
 
 export type IEnvTypes = 'development' | 'production' | 'test';

@@ -20,7 +20,7 @@ export default class CustomDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="antialiased">
+        <body>
           <Main />
           <NextScript />
         </body>

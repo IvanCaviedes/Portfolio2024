@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Cedarville_Cursive, Allan } from 'next/font/google';
+import { Cedarville_Cursive, Allan, Lobster } from 'next/font/google';
 
 const cedarvilleCursiveFont = Cedarville_Cursive({
   subsets: ['latin'],
@@ -13,9 +13,16 @@ const allanFont = Allan({
   variable: '--font-alan',
 });
 
+const lobsterFont = Lobster({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-lobster',
+});
+
 const fontClass = classNames(
   cedarvilleCursiveFont.variable,
-  allanFont.variable
+  allanFont.variable,
+  lobsterFont.variable
 );
 
 export default fontClass;

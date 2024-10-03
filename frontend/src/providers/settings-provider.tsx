@@ -10,7 +10,7 @@ const SettingProvider: FC<{ children: ReactNode }> = ({
   const { isLoading, error } = useLoadSettings();
 
   if (isLoading) {
-    return <Loader color="red-400" type="ThreeDots" />;
+    return <Loader color="lime-400" type="ThreeDots" />;
   }
 
   if (error) {
