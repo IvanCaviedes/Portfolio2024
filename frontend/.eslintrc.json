@@ -76,7 +76,6 @@
     ], // Prefiere funciones sin estado para componentes funcionales
     "react/prop-types": "error", // Obligar a definir `propTypes`
     "react/react-in-jsx-scope": "off", // No es necesario tener React en el alcance desde React 17
-    "react/require-default-props": "error", // Obligar a definir `defaultProps` cuando es necesario
     "react/self-closing-comp": "error", // Obliga a usar etiquetas autocerradas cuando no tienen hijos
     "react/sort-comp": [
       "error",

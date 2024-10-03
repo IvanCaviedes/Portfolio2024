@@ -12,6 +12,7 @@ import { eachDayOfInterval, isTomorrow } from 'date-fns';
 import { useAtom } from 'jotai';
 
 import MaintenanceMode from '@/components/maintenance/Mantenance';
+import DinamicSeo from '@/components/ui/dinamic-seo';
 import Loader from '@/components/ui/loader';
 import { useSettingsStore } from '@/store/settings';
 import {
@@ -61,11 +62,19 @@ const Maintenance: FC<{ children: ReactNode }> = ({
   }, [handleMaintenanceCheck]);
 
   if (isLoading) {
-    return <Loader color="red-400" type="ThreeDots" />;
+    return <Loader color="lime-400" type="ThreeDots" />;
   }
 
   if (underMantenanceStart) {
-    return <MaintenanceMode />;
+    return (
+      <>
+        <DinamicSeo
+          description="Esta página está en construcción. Estamos trabajando para ofrecerte una mejor experiencia. ¡Vuelve pronto!"
+          title="Maintenance"
+        />
+        <MaintenanceMode />
+      </>
+    );
   }
 
   return <>{children}</>;

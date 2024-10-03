@@ -15,11 +15,13 @@ const CountDownTimer: FC<ICountTimerProps> = ({ date }): JSX.Element => {
   }, [setUnderMantenanceStart]);
 
   return (
-    <Countdown
-      date={date}
-      renderer={CountDownDisplay}
-      onComplete={handleComplete}
-    />
+    <>
+      <Countdown
+        date={date}
+        renderer={CountDownDisplay}
+        onComplete={handleComplete}
+      />
+    </>
   );
 };
 
